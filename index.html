@@ -33,7 +33,9 @@
             font-family: 'Inter', sans-serif;
         }
 
+        html,
         body {
+            width: 100%;
             font-size: 14px;
             color: #333;
         }
@@ -889,7 +891,7 @@
 
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 10px 10px rgba(0, 73, 133, 0.262);
         }
 
         .thumb {
@@ -1084,7 +1086,6 @@
             color: #facc15;
             filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.15));
         }
-        
     </style>
 
 </head>
@@ -1466,7 +1467,7 @@
     <!-- Intro Section -->
     <section class="intro">
         <nav><a href="indexsecond.html">Home</a> › <span>Colleges</span></nav>
-        <h2>Best Colleges in India</h2>
+        <h2>Best <span class="display-4 text-decoration-underline text-primary fst-italic">COLLEGES</span> in India</h2>
         <p>
             Selecting the right college is more than just a step towards your future; it's a transformative experience
             that shapes your entire life. The best colleges in India offer more than academic excellence; they provide a
@@ -1690,6 +1691,586 @@
     </section>
 
 
+    <section class="contact-section">
+        <div class="contact-container">
+            <div class="row">
+                <div class="col-6">
+                    <div class="contact-content">
+                        <h2>Did you Choose a College?</h2>
+                        <p>Did you find your desired college? <br>Need more assistance? <br>Get customized counseling
+                            from our experts now!</p>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="contact-form">
+                        <h2 class="text-center">Talk To <span class="display-5 text-info fst-italic">Experts</span></h2>
+                        <form>
+                            <input type="text" placeholder="Enter Name" required>
+                            <input type="tel" placeholder="Enter Phone Number" required>
+                            <input type="email" placeholder="Enter Email" required>
+                            <input type="text" placeholder="Enter Interested Course" required>
+                            <button type="submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* Section Styling */
+        .contact-section {
+            background: linear-gradient(130deg, #0056c7, #003452, #004aaa);
+            /* Unique Gradient Background */
+            padding: 50px 0;
+            color: #fff;
+        }
+
+        .contact-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .col-6 {
+            flex: 0 0 48%;
+            /* Allows two equal columns, with some space in between */
+            padding: 15px;
+        }
+
+        .contact-content {
+            text-align: left;
+        }
+
+        h2 {
+            font-size: 2.3rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+        }
+
+        .contact-form form {
+            display: grid;
+            gap: 15px;
+            justify-content: center;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .contact-form input {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 150%;
+        }
+
+        .contact-form button {
+            padding: 10px;
+            background-color: #4caf50;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            margin-left: 90px;
+        }
+
+        .contact-form button:hover {
+            background-color: #45a049;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .row {
+                flex-direction: column;
+                /* Stack the columns vertically on smaller screens */
+                text-align: center;
+            }
+
+            .col-6 {
+                flex: 0 0 100%;
+                /* Make each column take full width */
+                margin-bottom: 30px;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .contact-form {
+                padding: 20px;
+            }
+
+            .contact-form input {
+                padding: 12px;
+            }
+        }
+
+        /* Small Mobile Responsiveness */
+        @media (max-width: 480px) {
+            h2 {
+                font-size: 1.25rem;
+            }
+
+            .contact-form form {
+                gap: 10px;
+            }
+
+            .contact-form input {
+                padding: 8px;
+            }
+
+            .contact-form button {
+                padding: 12px;
+            }
+        }
+    </style>
+
+    <section class="mx-5 px-5">
+        <h2 class="text-center">Top Featured <span class="fst-italic display-3 text-info">Colleges</span></h2>
+        <!-- Carousel Wrapper -->
+        <div class="position-relative" data-aos="fade-up" data-aos-duration="2000">
+            <!-- Prev Button -->
+            <button class="slick-prev-btn">&#10094;</button>
+            <!-- Next Button -->
+            <button class="slick-next-btn">&#10095;</button>
+
+            <!-- Carousel -->
+            <div class="college-carousel mx-5">
+                <div class="college-card" data-city="Kollam">
+                    <a href="#">
+                        <div class="card-image"
+                            style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
+                        </div>
+                        <div class="card-text">
+                            <h5>St. Thomas College</h5>
+                            <p class="location">📍 Kollam</p>
+                            <div class="card-actions">
+                                <button class="btn-rect">Explore</button>
+                                <button class="btn-round"><i class="fa-solid fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="college-card" data-city="Kollam">
+                    <a href="#">
+                        <div class="card-image"
+                            style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
+                        </div>
+                        <div class="card-text">
+                            <h5>St. Thomas College</h5>
+                            <p class="location">📍 Kollam</p>
+                            <div class="card-actions">
+                                <button class="btn-rect">Explore</button>
+                                <button class="btn-round"><i class="fa-solid fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="college-card" data-city="Kollam">
+                    <a href="#">
+                        <div class="card-image"
+                            style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
+                        </div>
+                        <div class="card-text">
+                            <h5>St. Thomas College</h5>
+                            <p class="location">📍 Kollam</p>
+                            <div class="card-actions">
+                                <button class="btn-rect">Explore</button>
+                                <button class="btn-round"><i class="fa-solid fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="college-card" data-city="Kollam">
+                    <a href="#">
+                        <div class="card-image"
+                            style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
+                        </div>
+                        <div class="card-text">
+                            <h5>St. Thomas College</h5>
+                            <p class="location">📍 Kollam</p>
+                            <div class="card-actions">
+                                <button class="btn-rect">Explore</button>
+                                <button class="btn-round"><i class="fa-solid fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="college-card" data-city="Kollam">
+                    <a href="#">
+                        <div class="card-image"
+                            style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
+                        </div>
+                        <div class="card-text">
+                            <h5>St. Thomas College</h5>
+                            <p class="location">📍 Kollam</p>
+                            <div class="card-actions">
+                                <button class="btn-rect">Explore</button>
+                                <button class="btn-round"><i class="fa-solid fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="college-card" data-city="Kollam">
+                    <a href="#">
+                        <div class="card-image"
+                            style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
+                        </div>
+                        <div class="card-text">
+                            <h5>St. Thomas College</h5>
+                            <p class="location">📍 Kollam</p>
+                            <div class="card-actions">
+                                <button class="btn-rect">Explore</button>
+                                <button class="btn-round"><i class="fa-solid fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="college-card" data-city="Kollam">
+                    <a href="#">
+                        <div class="card-image"
+                            style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
+                        </div>
+                        <div class="card-text">
+                            <h5>St. Thomas College</h5>
+                            <p class="location">📍 Kollam</p>
+                            <div class="card-actions">
+                                <button class="btn-rect">Explore</button>
+                                <button class="btn-round"><i class="fa-solid fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="college-card" data-city="Kollam">
+                    <a href="#">
+                        <div class="card-image"
+                            style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
+                        </div>
+                        <div class="card-text">
+                            <h5>St. Thomas College</h5>
+                            <p class="location">📍 Kollam</p>
+                            <div class="card-actions">
+                                <button class="btn-rect">Explore</button>
+                                <button class="btn-round"><i class="fa-solid fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="college-card" data-city="Kollam">
+                    <a href="#">
+                        <div class="card-image"
+                            style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
+                        </div>
+                        <div class="card-text">
+                            <h5>St. Thomas College</h5>
+                            <p class="location">📍 Kollam</p>
+                            <div class="card-actions">
+                                <button class="btn-rect">Explore</button>
+                                <button class="btn-round"><i class="fa-solid fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="college-card" data-city="Kollam">
+                    <a href="#">
+                        <div class="card-image"
+                            style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
+                        </div>
+                        <div class="card-text">
+                            <h5>St. Thomas College</h5>
+                            <p class="location">📍 Kollam</p>
+                            <div class="card-actions">
+                                <button class="btn-rect">Explore</button>
+                                <button class="btn-round"><i class="fa-solid fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="college-card" data-city="Kollam">
+                    <a href="#">
+                        <div class="card-image"
+                            style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
+                        </div>
+                        <div class="card-text">
+                            <h5>St. Thomas College</h5>
+                            <p class="location">📍 Kollam</p>
+                            <div class="card-actions">
+                                <button class="btn-rect">Explore</button>
+                                <button class="btn-round"><i class="fa-solid fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="college-card" data-city="Kollam">
+                    <a href="#">
+                        <div class="card-image"
+                            style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
+                        </div>
+                        <div class="card-text">
+                            <h5>St. Thomas College</h5>
+                            <p class="location">📍 Kollam</p>
+                            <div class="card-actions">
+                                <button class="btn-rect">Explore</button>
+                                <button class="btn-round"><i class="fa-solid fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="college-card" data-city="Kollam">
+                    <a href="#">
+                        <div class="card-image"
+                            style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
+                        </div>
+                        <div class="card-text">
+                            <h5>St. Thomas College</h5>
+                            <p class="location">📍 Kollam</p>
+                            <div class="card-actions">
+                                <button class="btn-rect">Explore</button>
+                                <button class="btn-round"><i class="fa-solid fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="college-card" data-city="Kollam">
+                    <a href="#">
+                        <div class="card-image"
+                            style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
+                        </div>
+                        <div class="card-text">
+                            <h5>St. Thomas College</h5>
+                            <p class="location">📍 Kollam</p>
+                            <div class="card-actions">
+                                <button class="btn-rect">Explore</button>
+                                <button class="btn-round"><i class="fa-solid fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="college-card" data-city="Kollam">
+                    <a href="#">
+                        <div class="card-image"
+                            style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
+                        </div>
+                        <div class="card-text">
+                            <h5>St. Thomas College</h5>
+                            <p class="location">📍 Kollam</p>
+                            <div class="card-actions">
+                                <button class="btn-rect">Explore</button>
+                                <button class="btn-round"><i class="fa-solid fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="college-card" data-city="Kollam">
+                    <a href="#">
+                        <div class="card-image"
+                            style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
+                        </div>
+                        <div class="card-text">
+                            <h5>St. Thomas College</h5>
+                            <p class="location">📍 Kollam</p>
+                            <div class="card-actions">
+                                <button class="btn-rect">Explore</button>
+                                <button class="btn-round"><i class="fa-solid fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <style>
+             /* Style carousel arrows */
+        .slick-prev-btn,
+        .slick-next-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            color: rgb(0, 34, 65);
+            border: none;
+            padding: 12px 23px;
+            font-size: 23px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            border: 2px solid rgb(0, 26, 74);
+            font-weight: 900;
+        }
+
+        .slick-prev-btn {
+            left: -60px;
+        }
+
+        /* move left side */
+        .slick-next-btn {
+            right: -60px;
+        }
+
+        /* move right side */
+
+        .slick-prev-btn:hover,
+        .slick-next-btn:hover {
+            background: rgba(0, 19, 45, 0.838);
+            color: #ffffff;
+            transition: all 0.3s ease;
+        }
+
+            /* Category Buttons */
+            .category-bar {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+                margin-bottom: 40px;
+            }
+
+            .category-btn {
+                padding: 10px 22px;
+                background: #e9f6ff;
+                border: 2px solid #00b7ff;
+                border-radius: 30px;
+                color: #0077b6;
+                font-weight: 500;
+                transition: all 0.3s ease;
+                cursor: pointer;
+            }
+
+            .category-btn:hover,
+            .category-btn.active {
+                background: linear-gradient(to right, #00b7ff, #a6f0ff);
+                color: #000;
+                border-color: #00b7ff;
+                box-shadow: 0 4px 12px rgba(0, 183, 255, 0.2);
+            }
+
+            /* --------------------------------------------------------College Cards Carousal */
+
+            .college-card {
+                position: relative;
+                width: 320px;
+                border-radius: 22px;
+                overflow: hidden;
+                background: #fff;
+                transition: all 0.4s ease;
+                margin: 6px;
+            }
+
+            .college-card:hover {
+                transform: translateY(-8px) scale(1.02);
+                box-shadow: 0 25px 50px rgba(5, 43, 255, 0.314);
+            }
+
+            .college-card a {
+                display: flex;
+                flex-direction: column;
+                text-decoration: none;
+                color: inherit;
+            }
+
+            .card-image {
+                height: 160px;
+                /* half the card */
+                background-size: cover;
+                background-position: center;
+                border-bottom: 1px solid rgba(0, 13, 157, 0.05);
+                transition: transform 0.6s ease;
+            }
+
+            .college-card:hover .card-image {
+                transform: scale(1.1);
+            }
+
+            .card-text {
+                padding: 18px;
+            }
+
+            .card-text h5 {
+                font-size: 1.1rem;
+                font-weight: 700;
+                margin: 0 0 6px 0;
+            }
+
+            .card-text .location {
+                font-size: 0.9rem;
+                color: #777;
+                margin: 0 0 14px 0;
+            }
+
+            .card-actions {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .btn-rect {
+                padding: 10px 20px;
+                border-radius: 8px;
+                border: none;
+                background: #0b2a66;
+                /* deep professional blue */
+                color: #ffffff;
+                font-weight: 500;
+                font-size: 14px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+            }
+
+            .btn-rect:hover {
+                background: #3370ea;
+                /* subtle hover color */
+                transform: translateY(-2px);
+                box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+            }
+
+
+            .btn-round {
+                width: 38px;
+                height: 38px;
+                border-radius: 50%;
+                border: none;
+                background: #ffffff;
+                color: #000000;
+                font-size: 0.9rem;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: 0.3s ease;
+                border: 1px solid black;
+            }
+
+            .btn-round:hover {
+                background: #3388ff;
+                transform: rotate(90deg) scale(1.1);
+            }
+        </style>
+    </section>
+
     <!-- -------------------------------------------------------------FOOTER SECTION HERE -->
 
     <!-- Footer -->
@@ -1747,7 +2328,7 @@
                 </div>
 
                 <!-- Download App -->
-                <div class="col-lg-2 col-md-6 mb-4  pt-5">
+                <div class="col-lg-2 col-md-6 mb-4 pt-5">
                     <h6 class="footer-title">Download Our App</h6>
                     <div class="download-btn">
                         <a href="#"><img
@@ -1859,6 +2440,72 @@
                 duration: 0.3,
                 ease: "power1.out",
                 filter: "drop-shadow(0 0 0px transparent)"
+            });
+        });
+
+    </script>
+
+
+    <script>
+        $(document).ready(function () {
+            var allCards = $('.college-card').clone(); // save all cards as source
+
+            function initCarousel() {
+                $('.college-carousel').slick({
+                    slidesToShow: 4,
+                    centeredSlides: true,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    arrows: false,
+                    autoplay: true,
+                    autoplaySpeed: 3000,
+                    speed: 600,
+                    cssEase: 'ease-in-out',
+                });
+            }
+
+            // Initial carousel
+            initCarousel();
+
+            // Custom arrows
+            $('.slick-prev-btn').click(function () {
+                $('.college-carousel').slick('slickPrev');
+            });
+            $('.slick-next-btn').click(function () {
+                $('.college-carousel').slick('slickNext');
+            });
+
+            // Filter functionality
+            $('.filter-btn').click(function () {
+                var city = $(this).data('city');
+
+                // button active state
+                $('.filter-btn').removeClass('active');
+                $(this).addClass('active');
+
+                // Destroy current slick
+                $('.college-carousel').slick('unslick');
+                $('.college-carousel').empty(); // remove old cards
+
+                // Filter cards
+                var filteredCards;
+                if (city === 'all') {
+                    filteredCards = allCards.clone();
+                } else {
+                    filteredCards = allCards.filter('[data-city="' + city + '"]').clone();
+                }
+
+                // If fewer than 6 cards, duplicate them to allow infinite loop
+                var count = filteredCards.length;
+                while (filteredCards.length < 6) {
+                    filteredCards = filteredCards.add(filteredCards.clone());
+                }
+
+                // Append filtered cards
+                $('.college-carousel').append(filteredCards);
+
+                // Re-init carousel
+                initCarousel();
             });
         });
 
