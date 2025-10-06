@@ -2,950 +2,1868 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NexLearn | Educational Consulting</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>category</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Playfair+Display:wght@700&family=Roboto+Mono:wght@500&family=Montserrat:wght@700&display=swap"
-        rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script>
+        AOS.init();
+    </script>
 
-    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ===== General Reset ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            font-size: 14px;
+            color: #333;
+        }
+
+        /* ===== Navbar 1 ===== */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 9px 20px;
+            background-color: #0c2a45;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 100;
+        }
+
+        .navbar .logo {
+            width: 140px;
+        }
+
+        .navbar .logo img {
+            width: 100%;
+            object-fit: contain;
+        }
+
+        .navbar .nav-links {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .navbar .nav-item {
+            position: relative;
+            cursor: pointer;
+            font-weight: 500;
+            color: #ffffff;
+            transition: color 0.3s;
+        }
+
+        .navbar .nav-item:hover {
+            color: #007bff;
+        }
+
+        .navbar .btns {
+            display: flex;
+            gap: 10px;
+        }
+
+        .navbar .btns button {
+            padding: 8px 18px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .navbar .btns button:first-child {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+
+        .navbar .btns button:last-child {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .navbar .btns button:hover {
+            opacity: 0.85;
+        }
+
+        /* ===== NAVBAR 2 (SECOND, TRANSPARENT WITH DROPDOWN) ===== */
+        .navbar-two {
+            width: 100%;
+            background: rgba(247, 251, 255, 0.771);
+            /* Transparent */
+            backdrop-filter: blur(8px);
+            position: relative;
+            z-index: 1000;
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+
+        }
+
+        .navbar-two .nav-links {
+            display: flex;
+            justify-content: center;
+            /* Center content */
+            align-items: center;
+            gap: 10px;
+
+            font-size: 15px;
+            color: #000;
+        }
+
+        .navbar-two .nav-item {
+            position: relative;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 300;
+            padding: 6px 12px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-two .nav-item:hover {
+            color: #0077ff;
+        }
+
+        /* Dropdown */
+        .dropdown {
+            display: none;
+            position: fixed;
+            top: 99%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgb(255, 255, 255);
+            padding: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            min-width: 1300px;
+            text-align: left;
+
+        }
+
+        .navbar-two .nav-item:hover .dropdown {
+            display: flex;
+        }
+
+
+        .dropdown-column {
+            min-width: 150px;
+            margin-right: 25px;
+        }
+
+        .dropdown-column li {
+            color: #000;
+        }
+
+        .dropdown-column h4 {
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            color: #123671;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 4px;
+        }
+
+        .dropdown ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .dropdown ul li {
+            padding: 5px 0;
+            font-size: 13px;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+
+        .dropdown ul li:hover {
+            color: #4d96ea;
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 1000px) {
+            .navbar {
+                padding: 10px 20px;
+                flex-wrap: wrap;
+            }
+
+            .navbar-two .nav-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .dropdown {
+                min-width: 100%;
+                flex-direction: column;
+            }
+
+            .dropdown-column {
+                margin-bottom: 15px;
+            }
+        }
+
+        .nav-item {
+            position: relative;
+            display: inline-block;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .navbar .nav-item:hover {
+            transform: translateY(-5px);
+            transition: .2s ease-in-out;
+        }
+
+        .nav-link-item {
+            position: relative;
+            display: inline-block;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .mini-menu {
+            display: none;
+            /* hidden by default */
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+            min-width: 150px;
+        }
+
+        .mini-menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .mini-menu ul li {
+            font-size: 14px;
+            padding: 5px 0;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .mini-menu ul li:hover {
+            color: #0077cc;
+            /* blue on hover */
+        }
+
+        /* show only when hovered */
+        .nav-link-item:hover .mini-menu {
+            display: block;
+        }
+
+        /* mobile navbar */
+
+
+        /* Hide by default on desktop */
+        .mobile-navbar,
+        .mobile-menu {
+            display: none;
+        }
+
+        /* Mobile view */
+        @media (max-width: 768px) {
+            .mobile-navbar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 20px;
+                background: #0c2a45;
+                color: #fff;
+                position: relative;
+                z-index: 1001;
+            }
+
+            .mobile-navbar .mobile-logo img {
+                max-height: 50px;
+            }
+
+            .hamburger {
+                font-size: 28px;
+                cursor: pointer;
+            }
+
+            .mobile-menu {
+                display: none;
+                flex-direction: column;
+                background: #0c2a45;
+                width: 100%;
+            }
+
+            .mobile-menu.show {
+                display: flex;
+            }
+
+            .mobile-item {
+                padding: 15px 20px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                color: #fff;
+                cursor: pointer;
+                transition: background 0.3s ease;
+            }
+
+            .mobile-item:hover {
+                background: #1b8bd1;
+            }
+        }
+
+        /* Hide desktop navbars on mobile */
+        @media (max-width: 768px) {
+
+            .navbar,
+            .navbar-two {
+                display: none;
+            }
+        }
+
+        @media (max-width: 1000px) {
+            .mobile-navbar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 20px;
+                background: #0c2a45;
+                color: #fff;
+                position: relative;
+                z-index: 1001;
+            }
+
+            .mobile-navbar .mobile-logo img {
+                max-height: 50px;
+            }
+
+            .hamburger {
+                font-size: 28px;
+                cursor: pointer;
+            }
+
+            .mobile-menu {
+                display: none;
+                flex-direction: column;
+                background: #0c2a45;
+                width: 100%;
+            }
+
+            .mobile-menu.show {
+                display: flex;
+            }
+
+            .mobile-item {
+                padding: 15px 20px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                color: #fff;
+                cursor: pointer;
+                transition: background 0.3s ease;
+            }
+
+            .mobile-item:hover {
+                background: #1b8bd1;
+            }
+        }
+
+        /* Hide desktop navbars on mobile */
+        @media (max-width: 1000px) {
+
+            .navbar,
+            .navbar-two {
+                display: none;
+            }
+        }
+
+
+        /* -----------------------------------footer css code */
+        .footer {
+            background-color: #0c2a45;
+            color: #fff;
+            padding: 40px 20px 20px;
+        }
+
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 15px;
+            font-weight: 100;
+        }
+
+        .footer a:hover {
+            color: #f1a470;
+        }
+
+        .footer .footer-logo img {
+            height: 65px;
+        }
+
+        .footer .footer-title {
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .footer .download-btn img {
+            max-width: 140px;
+            margin-bottom: 10px;
+        }
+
+        .footer .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #fff;
+            color: #0b2a66;
+            margin: 0 5px;
+            font-size: 16px;
+        }
+
+        .footer .social-icons a:hover {
+            background: #cdddf7;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            margin-top: 30px;
+            padding-top: 15px;
+            text-align: center;
+            font-size: 14px;
+            display: flex;
+        }
+
+        .download-brochure {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #000f34;
+            color: #0b2a66;
+            border-radius: 8px;
+            font-weight: 500;
+            text-decoration: none;
+            border: 2px solid rgb(255, 255, 255);
+            transition: all 0.3s ease;
+            /* smooth transition for all properties */
+            border-radius: 50px;
+        }
+
+        .download-brochure:hover {
+
+            /* subtle zoom */
+            color: #ffffff;
+            /* optional color change on hover */
+            background: #0b2a66;
+            /* optional background change on hover */
+            border-color: #001a4f;
+            /* optional border change */
+        }
+
+
+        .text-right {
+            display: flex;
+            justify-content: flex-end;
+            /* pushes content to the right */
+            align-items: flex-end;
+            /* vertically centers if needed */
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            /* optional separator */
+            padding-top: 15px;
+            font-size: 14px;
+            color: #fff;
+        }
+
+        .footer-bottom .social-icons a {
+            color: #000000;
+            margin-left: 12px;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .footer-bottom .social-icons a:hover {
+            color: #004794;
+            /* highlight on hover */
+        }
+
+        .left-text p {
+            font-size: 16px;
+            font-weight: lighter;
+        }
+
+        .form-bg {
+            background-color: #000124;
+            border-top-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+        }
+
+        /* ----------------------------------------------------------HERO SECTION  */
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: radial-gradient(circle at 20% 30%, #0c2a45, #184d82, #0c2a45);
+            color: white;
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            /* max-width: 800px; */
+            margin: 0 auto 1rem;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            color: #cbd5e1;
+        }
+
+        .search-box {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            padding: 10px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .search-box input {
+            padding: 12px 16px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            outline: none;
+            flex: 1;
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--text-dark);
+        }
+
+        .search-box button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 30px;
+            background: var(--accent);
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .search-box button:hover {
+            background: #059669;
+        }
+
+        /* Responsive Search */
+        @media(min-width: 600px) {
+            .search-box {
+                flex-direction: row;
+            }
+        }
+
+        /* Animated SVG Background */
+        .svg-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.15;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Intro Section */
+        .intro {
+            padding: 1rem 1rem;
+            background: white;
+
+        }
+
+        .intro nav {
+            font-size: 1.1rem;
+            color: #6b7280;
+            margin-bottom: 1rem;
+        }
+
+        .intro h2 {
+            font-size: 2.3rem;
+            margin-bottom: 1rem;
+            color: rgb(0, 59, 154);
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .intro p {
+            max-width: 1300px;
+            margin: 0 auto;
+            font-size: 1.3rem;
+            color: #4b5563;
+        }
+
+        /* -----------------------blue long button */
+
+        .download-brochure {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #002072;
+            color: #0b2a66;
+            border-radius: 8px;
+            font-weight: 500;
+            text-decoration: none;
+            border: 2px solid #002072;
+            transition: all 0.3s ease;
+            /* smooth transition for all properties */
+            border-radius: 50px;
+        }
+
+        .download-brochure:hover {
+
+            /* subtle zoom */
+            color: #ffffff;
+            /* optional color change on hover */
+            background: #0556e1;
+            /* optional background change on hover */
+            border-color: #001a4f;
+            /* optional border change */
+        }
+
+        /* ------------------------------------------------------------------CATEGORY OF COLLEGES */
+
+
+
+        :root {
+            --bg: #f5f7fa;
+            --panel: #edf7ff;
+            --elev: #f0f3f8;
+            --card: #ffffff;
+            --text: #1f2937;
+            --muted: #6b7280;
+            --brand: #001ba4;
+            --ring: #a5b4fc;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --trans: 0.35s ease;
+        }
+
+        /* Layout */
+        .wrap {
+            width: 95%;
+            margin: auto;
+            padding: 28px 20px 80px;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 32px;
+        }
+
+        @media (max-width: 980px) {
+            .wrap {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Section header */
+        .head {
+            grid-column: 1 / -1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .head h2 {
+            margin: 0;
+            font-size: clamp(22px, 2.8vw, 30px);
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .count {
+            color: var(--muted);
+            font-weight: 600;
+            padding: .35rem .7rem;
+            border-radius: 20px;
+            background: #eef2ff;
+            font-size: 13px;
+            transition: all var(--trans);
+        }
+
+        /* Sidebar Filters */
+        .filters {
+            background: var(--panel);
+            border-radius: 32px;
+            /* box-shadow: var(--shadow); */
+            padding: 20px;
+            position: sticky;
+            top: 16px;
+            height: fit-content;
+            transition: transform var(--trans), box-shadow var(--trans);
+
+        }
+
+        .filters:hover {
+            transform: translateY(-3px);
+            /* box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1); */
+        }
+
+        .filters h3 {
+            margin: 0 0 10px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--text);
+        }
+
+        .search {
+            position: relative;
+            margin: 10px 0 16px;
+        }
+
+        .search input {
+            width: 100%;
+            padding: 10px 12px 10px 36px;
+            border-radius: 12px;
+            border: 1px solid #d1d5db;
+            background: #f9fafb;
+            color: var(--text);
+            outline: 2px solid transparent;
+            transition: all var(--trans);
+        }
+
+        .search input:focus {
+            outline: 2px solid var(--ring);
+            border-color: var(--brand);
+            background: #ffffff;
+        }
+
+        .search svg {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 18px;
+            height: 18px;
+            stroke: var(--muted);
+        }
+
+        /* Checkboxes */
+        .check {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 12px;
+            border-radius: 14px;
+            cursor: pointer;
+            user-select: none;
+            transition: background var(--trans), transform var(--trans);
+        }
+
+        .check:hover {
+            background: #eef2ff;
+            transform: translateX(2px);
+        }
+
+        .check input {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 6px;
+            background: #ffffff;
+            display: grid;
+            place-items: center;
+            transition: all var(--trans);
+        }
+
+        .check input:checked {
+            background: var(--brand);
+            border-color: var(--brand);
+        }
+
+        .check input:checked::after {
+            content: "";
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 2px;
+        }
+
+        .divider {
+            height: 1px;
+            background: #e5e7eb;
+            margin: 12px 0;
+            border-radius: 1px;
+        }
+
+        /* Filters responsive */
+        @media (max-width:980px) {
+            .filters {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+
+            .group {
+                margin: 0;
+            }
+
+            .stack {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+
+            .divider {
+                display: none;
+            }
+        }
+
+        /* Cards Grid */
+        .results {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media (min-width:720px) {
+            .results {
+                grid-template-columns: 1fr;
+                gap: 22px;
+            }
+        }
+
+        /* Card */
+        .card {
+            display: grid;
+            grid-template-columns: 280px 1fr auto;
+            gap: 20px;
+            padding: 20px;
+            background: var(--card);
+            border-radius: 32px;
+            box-shadow: var(--shadow);
+            border: 1px solid #e5e7eb;
+            transition: transform var(--trans), box-shadow var(--trans);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .thumb {
+            aspect-ratio: 4/3;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid #e5e7eb;
+            position: relative;
+        }
+
+        .thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.02);
+            transition: transform var(--trans), filter var(--trans);
+            filter: saturate(105%) contrast(105%);
+        }
+
+        .card:hover .thumb img {
+            transform: scale(1.08);
+            filter: saturate(120%) contrast(110%);
+        }
+
+        .meta {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            min-width: 0;
+        }
+
+        .title {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .title h3 {
+            margin: 0;
+            font-size: clamp(16px, 2.2vw, 20px);
+            font-weight: 700;
+            line-height: 1.3;
+            color: var(--text);
+        }
+
+        .pill {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--brand);
+            background: #eef2ff;
+            border-radius: 999px;
+            padding: 0.25rem 0.55rem;
+        }
+
+        .sub {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .sub .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #d1d5db;
+            align-self: center;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            font-size: 12px;
+            color: #1f2937;
+            border-radius: 999px;
+            padding: .3rem .6rem;
+            background: #eef2ff;
+            font-weight: 500;
+            transition: transform var(--trans);
+        }
+
+        .tag:hover {
+            transform: scale(1.05);
+        }
+
+        /* Call to Action */
+        .cta {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 12px;
+            min-width: 120px;
+        }
+
+        .btn {
+            appearance: none;
+            border: 0;
+            cursor: pointer;
+            text-decoration: none;
+            background: linear-gradient(180deg, #001933, #002069);
+            color: white;
+            font-weight: 700;
+            padding: .75rem 1.2rem;
+            border-radius: 16px;
+            transition: transform var(--trans), box-shadow var(--trans);
+            box-shadow: 0 6px 18px rgba(59, 96, 220, 0.35);
+        }
+
+        .readmore {
+            margin-inline: 400px;
+            background-color: white;
+            border: 2px solid rgb(0, 132, 255);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 12px 28px rgba(70, 110, 229, 0.45);
+            color: white;
+        }
+
+        .link {
+            color: #0042b4;
+            text-decoration: none;
+            border-bottom: 1px dashed #a5b4fc;
+            font-weight: 500;
+            transition: color var(--trans), border-color var(--trans);
+            font-size: 18px;
+        }
+
+        .link:hover {
+            color: #000153;
+            border-color: #050062;
+        }
+
+        /* Responsive Cards */
+        @media (max-width:840px) {
+            .card {
+                grid-template-columns: 140px 1fr;
+            }
+
+            .cta {
+                grid-column: 1 / -1;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+            }
+        }
+
+        @media (max-width:520px) {
+            .card {
+                grid-template-columns: 1fr;
+            }
+
+            .thumb {
+                order: -1;
+                aspect-ratio: 16 / 9;
+            }
+
+            .cta {
+                justify-content: space-between;
+            }
+        }
+
+        /* Utility icons */
+        .i {
+            width: 16px;
+            height: 16px;
+            stroke: var(--muted);
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .stars {
+            display: flex;
+            gap: 4px;
+        }
+
+        .star {
+            width: 14px;
+            height: 14px;
+            color: #facc15;
+            filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.15));
+        }
+        
+    </style>
+
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
-        <div class="container-fluid">
-            <a class="navbar-brand text-white fw-bold" href="#"><img src="https://www.keralastudy.com/images/logo.png"
-                    class="w-75" alt=""></a>
-            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navCollapse" aria-controls="navCollapse" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon" style="filter: invert(1)"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navCollapse">
-                <ul class="navbar-nav ms-auto align-items-lg-center">
-                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-
-                    <!-- Mega Dropdown -->
-                    <li class="nav-item dropdown position-static">
-                        <a id="megaToggle" class="nav-link" href="#" role="button" aria-expanded="false"
-                            aria-controls="megaMenu">Colleges</a>
-
-                        <div id="megaMenu" class="dropdown-menu megamenu" aria-labelledby="megaToggle">
-                            <div class="mega-panel">
-                                <div class="mega-header">
-                                    <h6 class="m-0 fw-bold">Explore Colleges</h6>
-                                    <button class="mega-close" type="button" data-close="mega">Close</button>
-                                </div>
-
-                                <div class="row mega-cols row-cols-1 row-cols-md-3 row-cols-lg-4 g-2">
-                                    <div>
-                                        <h6 class="mega-h">Thiruvananthapuram</h6>
-                                        <a class="mega-link" href="#">University of Kerala</a>
-                                        <a class="mega-link" href="#">IIST</a>
-                                        <a class="mega-link" href="#">Govt. Medical College</a>
-                                        <a class="mega-link" href="#">Mar Ivanios College</a>
-                                    </div>
-                                    <div>
-                                        <h6 class="mega-h">Kochi</h6>
-                                        <a class="mega-link" href="#">CUSAT</a>
-                                        <a class="mega-link" href="#">Rajagiri College</a>
-                                        <a class="mega-link" href="#">Sacred Heart College</a>
-                                        <a class="mega-link" href="#">St. Teresa’s College</a>
-                                    </div>
-                                    <div>
-                                        <h6 class="mega-h">Kozhikode</h6>
-                                        <a class="mega-link" href="#">NIT Calicut</a>
-                                        <a class="mega-link" href="#">Govt. Medical College</a>
-                                        <a class="mega-link" href="#">Farook College</a>
-                                        <a class="mega-link" href="#">Zamorin’s Guruvayurappan</a>
-                                    </div>
-                                    <div>
-                                        <h6 class="mega-h">More Cities</h6>
-                                        <a class="mega-link" href="#">Thrissur</a>
-                                        <a class="mega-link" href="#">Kannur</a>
-                                        <a class="mega-link" href="#">Kottayam</a>
-                                        <a class="mega-link" href="#">Alappuzha</a>
-                                    </div>
-
-
-                                    <!-- Duplicate groups to simulate big content -->
-                                    <div>
-                                        <h6 class="mega-h">Thiruvananthapuram</h6>
-                                        <a class="mega-link" href="#">University College</a>
-                                        <a class="mega-link" href="#">SCTIMST</a>
-                                        <a class="mega-link" href="#">Govt. Engineering College</a>
-                                        <a class="mega-link" href="#">All Saints’ College</a>
-                                    </div>
-                                    <div>
-                                        <h6 class="mega-h">Kochi</h6>
-                                        <a class="mega-link" href="#">Maharaja’s College</a>
-                                        <a class="mega-link" href="#">SCMS</a>
-                                        <a class="mega-link" href="#">FISAT</a>
-                                        <a class="mega-link" href="#">Bharata Mata</a>
-                                    </div>
-                                    <div>
-                                        <h6 class="mega-h">Kozhikode</h6>
-                                        <a class="mega-link" href="#">AWH Engineering</a>
-                                        <a class="mega-link" href="#">Devagiri College</a>
-                                        <a class="mega-link" href="#">Govt. Law College</a>
-                                        <a class="mega-link" href="#">MES Kalladi</a>
-                                    </div>
-                                    <div>
-                                        <h6 class="mega-h">More</h6>
-                                        <a class="mega-link" href="#">See all…</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <a class="btn btn-3">LOGIN</a>
-                    <a class="btn btn-4">SIGN UP</a>
-                    <!-- End Mega Dropdown -->
-                </ul>
-            </div>
+    <!-- navbar-1 -->
+    <div class="navbar px-5">
+        <div class="logo"><img src="https://www.keralastudy.com/images/logo.png" class="w-100" alt=""></div>
+        <div class="nav-links">
+            <div class="nav-item">Top Colleges</div>
+            <div class="nav-item">Top Courses</div>
+            <div class="nav-item">Entrance Exam</div>
+            <div class="nav-item">Boards</div>
+            <div class="nav-item">Admissions 2025</div>
+            <div class="nav-item">News</div>
+            <div class="nav-item">More</div>
         </div>
-    </nav>
+        <div class="btns">
+            <button>Write a review</button>
+            <button><i class="fa-solid fa-user"></i> / Register</button>
+        </div>
+    </div>
 
-    <main>
-        <div class="split-carousel position-relative">
-            <!-- Left Carousel -->
-            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="pexels-olia-danilevich-8093032.jpg" class="d-block w-100" alt="...">
+
+
+    <!-- navbar 2nd -->
+    <div class="navbar-two p-0">
+        <div class="nav-links" data-aos="fade-right">
+            <div class="nav-item">Home</div>
+            <div class="nav-item">Medical <i class="fa-solid fa-angle-down"></i>
+                <div class="dropdown">
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY COURSE</h4>
+                        <ul>
+                            <li>MBBS Colleges</li>
+                            <li>MS Colleges</li>
+                            <li>BAMS Colleges</li>
+                            <li>BPT Colleges</li>
+                            <li>M.F.Sc Colleges</li>
+                        </ul>
                     </div>
-                    <div class="carousel-item">
-                        <img src="pexels-pixabay-267885.jpg" class="d-block w-100" alt="...">
+                    <div class="dropdown-column">
+                        <h4>POPULAR COLLEGES</h4>
+                        <ul>
+                            <li>AIIMS, New Delhi</li>
+                            <li>Kasturba Medical College, Mangalore</li>
+                            <li>Aligarh Muslim University, UP</li>
+                        </ul>
                     </div>
-                    <div class="carousel-item">
-                        <img src="pexels-satyabrata-maiti-258455945-30481516.jpg" class="d-block w-100" alt="...">
+
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY CITY</h4>
+                        <ul>
+                            <li>Thiruvananthapuram</li>
+                            <li>Kozhikode</li>
+                            <li>Kochi</li>
+                            <li>Thrissur</li>
+                            <li>Kottayam</li>
+                            <li>Alappuzha</li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY SPECIALISATION</h4>
+                        <ul>
+                            <li>MS General Surgery Colleges</li>
+                            <li>MS Orthopaedics Colleges</li>
+                            <li>MS Anatomy Colleges</li>
+                            <li>MD Pathology Colleges</li>
+                            <li>MD Medicine Colleges</li>
+                            <li>MD Dermatology Colleges</li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-column">
+                        <h4>EXAMS</h4>
+                        <ul>
+                            <li>NEET</li>
+                            <li>NEET PG</li>
+                            <li>NEET MDS</li>
+                            <li>AIIMS MBBS</li>
+                            <li>AIIMS PG</li>
+                            <li>All Medical Exams >></li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-column">
+                        <h4>COURSES</h4>
+                        <ul>
+                            <li>MBBS</li>
+                            <li>MS</li>
+                            <li>MD</li>
+                            <li>BAMS</li>
+                            <li>BPT</li>
+                            <li>MPT</li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
-            <!-- Search Bar Overlay -->
-            <div class="search-overlay">
-                <div class="InputContainer">
-                    <input placeholder="Search..." id="input" class="input" name="text" type="text">
-                    <button class="search-btn">Search</button>
-                </div>
-                
-                <!-- Priority Navigation -->
-                <div class="button-container">
-                    <button class="button" title="Colleges">
-                        <i class="fa-solid fa-building-columns"></i>
-                    </button>
-                    <button class="button" title="Courses">
-                        <i class="fa-solid fa-book-open"></i>
-                    </button>
-                    <button class="button" title="Admissions">
-                        <i class="fa-solid fa-user-graduate"></i>
-                    </button>
-                </div>
-
-            </div>
-        </div>
-        <!-- Blue Overlay on Right Half -->
-        <!-- <div class="right-overlay d-flex align-items-center justify-content-center">
-                <div class="content text-white w-75">
-                    <h2 class="fw-bold mb-4 animate-fade">Get in Touch</h2>
-                    <form class="contact-form">
-                        <div class="form-group animate-slide">
-                            <input type="text" placeholder="Full Name" required>
-                        </div>
-                        <div class="form-group animate-slide" style="animation-delay: 0.1s;">
-                            <input type="email" placeholder="Email Address" required>
-                        </div>
-                        <div class="form-group animate-slide" style="animation-delay: 0.2s;">
-                            <input type="tel" placeholder="Phone Number" required>
-                        </div>
-                        <div class="form-group animate-slide" style="animation-delay: 0.3s;">
-                            <input type="text" placeholder="Location" required>
-                        </div>
-                        <div class="form-group animate-slide" style="animation-delay: 0.4s;">
-                            <textarea placeholder="Your Message" rows="3"></textarea>
-                        </div>
-                        <button type="submit" class="btn-submit animate-slide" style="animation-delay: 0.5s;">
-                            Send Message
-                        </button>
-                    </form>
-                </div>
-            </div> -->
-
-
-
-        <!-- Right Content -->
-        <div class="content-right">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <!-- From Uiverse.io by rmdhnkhsn -->
-                        <a class="card" href="">
-                            <div class="containers">
-                                <div class="icon-circle">
-                                    <i class="fa-solid fa-quote-left"></i>
-                                </div>
-                                <div class="title mb-3">TESTIMONIALS</div>
-                                <div class="subtitle">
-                                    Every year, we award travelers’ favorite destinations, hotels,
-                                    restaurants, and things to do around the world.
-                                </div>
-                                <div class="btnRound btnService">
-                                    <i class="fa-solid fa-paper-plane"></i>
-                                </div>
-                            </div>
-                        </a>
-
+            <div class="nav-item">Engineering<i class="fa-solid fa-angle-down"></i>
+                <div class="dropdown">
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY COURSE</h4>
+                        <ul>
+                            <li>B.Tech Colleges</li>
+                            <li>M.Tech Colleges</li>
+                        </ul>
                     </div>
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <!-- From Uiverse.io by rmdhnkhsn -->
-                        <a class="card" href="">
-                            <div class="containers">
-                                <div class="icon-circle">
-                                    <i class="fa-solid fa-building-columns"></i>
-                                </div>
-                                <div class="title mb-3">GOVT UNIVERSITIES</div>
-                                <div class="subtitle">
-                                    Every year, we award travelers’ favorite destinations, hotels,
-                                    restaurants, and things to do around the world.
-                                </div>
-                                <div class="btnRound btnService">
-                                    <i class="fa-solid fa-paper-plane"></i>
-                                </div>
-                            </div>
-                        </a>
-
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY STATE</h4>
+                        <ul>
+                            <li>Maharashtra</li>
+                            <li>Delhi</li>
+                            <li>Uttar Pradesh</li>
+                            <li>Tamil Nadu</li>
+                            <li>Rajasthan</li>
+                            <li>Andhra Pradesh</li>
+                        </ul>
                     </div>
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <!-- From Uiverse.io by rmdhnkhsn -->
-                        <a class="card" href="">
-                            <div class="containers">
-                                <div class="icon-circle">
-                                    <i class="fa-solid fa-graduation-cap"></i>
-                                </div>
-                                <div class="title mb-3">SCHOLARSHIP</div>
-                                <div class="subtitle">
-                                    Every year, we award travelers’ favorite destinations, hotels,
-                                    restaurants, and things to do around the world.
-                                </div>
-                                <div class="btnRound btnService">
-                                    <i class="fa-solid fa-paper-plane"></i>
-                                </div>
-                            </div>
-                        </a>
-
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY CITY</h4>
+                        <ul>
+                            <li>Thiruvananthapuram</li>
+                            <li>Kozhikode</li>
+                            <li>Kochi</li>
+                            <li>Thrissur</li>
+                            <li>Kottayam</li>
+                            <li>Alappuzha</li>
+                        </ul>
                     </div>
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <!-- From Uiverse.io by rmdhnkhsn -->
-                        <a class="card" href="">
-                            <div class="containers">
-                                <div class="icon-circle">
-                                    <i class="fa-solid fa-pen-nib"></i>
-                                </div>
-                                <div class="title mb-3">ADMISSION</div>
-                                <div class="subtitle">
-                                    Every year, we award travelers’ favorite destinations, hotels,
-                                    restaurants, and things to do around the world.
-                                </div>
-                                <div class="btnRound btnService">
-                                    <i class="fa-solid fa-paper-plane"></i>
-                                </div>
-                            </div>
-                        </a>
-
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY SPECIALISATION</h4>
+                        <ul>
+                            <li>B.Tech Computer Engineering</li>
+                            <li>B.Tech Civil Engineering</li>
+                            <li>B.Tech Mechanical Engineering</li>
+                            <li>M.Tech Computer Engineering</li>
+                            <li>M.Tech Civil Engineering</li>
+                            <li>M.Tech Mechanical Engineering</li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-column">
+                        <h4>EXAMS</h4>
+                        <ul>
+                            <li>JEE Main</li>
+                            <li>JEE Advanced</li>
+                            <li>UPESEAT</li>
+                            <li>WBJEE</li>
+                            <li>OUCET</li>
+                            <li>AP EAMCET</li>
+                            <li>LPUNEST</li>
+                            <li>All Engineering Exams >></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-column">
+                        <h4>COURSES</h4>
+                        <ul>
+                            <li>B.Tech</li>
+                            <li>M.Tech</li>
+                            <li>B.E</li>
+                            <li>M.E</li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-column">
+                        <h4>POPULAR COLLEGES</h4>
+                        <ul>
+                            <li>IIT Kharagpur</li>
+                            <li>BMS College of Engineering</li>
+                            <li>IIT Delhi</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </div>
-        </div>
-    </main>
+            <div class="nav-item">Dental Colleges<i class="fa-solid fa-angle-down"></i>
+                <div class="dropdown">
 
-    <section>
-        <div class="container-fluid m-5 mt-5 pt-5">
-            <div class="row">
-                <div class="col-12 col-lg-6 col-md-6 left-para">
-                    <h2 class="animated-link">Educational Consulting for <a href="#">KERALA-STUDY</a></h2>
-                    <p>
-                        We guide students in Kerala to make informed decisions about their higher education.
-                        From choosing the right colleges and universities to understanding eligibility, scholarships,
-                        and entrance exams, our experts provide personalized advice tailored to your goals.
-                    </p>
+                    <div class="dropdown-column">
+                        <h4>TOP COLLEGES</h4>
+                        <ul>
+                            <li>Government Dental College, Thiruvananthapuram</li>
+                            <li>Government Dental College, Kozhikode</li>
+                            <li>Amrita School of Dentistry, Kochi</li>
+                            <li>Pushpagiri College of Dental Sciences, Thiruvalla</li>
+                            <li>Annoor Dental College, Muvattupuzha</li>
+                            <li>KMCT Dental College, Kozhikode</li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-column">
+                        <h4>BY CITY</h4>
+                        <ul>
+                            <li>Thiruvananthapuram</li>
+                            <li>Kozhikode</li>
+                            <li>Kochi</li>
+                            <li>Thrissur</li>
+                            <li>Kottayam</li>
+                            <li>Alappuzha</li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-column">
+                        <h4>POPULAR COURSES</h4>
+                        <ul>
+                            <li>BDS</li>
+                            <li>MDS Oral Surgery</li>
+                            <li>MDS Orthodontics</li>
+                            <li>MDS Prosthodontics</li>
+                            <li>MDS Periodontics</li>
+                            <li>MDS Pedodontics</li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-column">
+                        <h4>EXAMS</h4>
+                        <ul>
+                            <li>NEET</li>
+                            <li>NEET MDS</li>
+                            <li>AIIMS PG</li>
+                            <li>All Dental Exams >></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="nav-item">Management <i class="fa-solid fa-angle-down"></i>
+                <div class="dropdown">
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY COURSE</h4>
+                        <ul>
+                            <li>BBA Colleges</li>
+                            <li>MBA Colleges</li>
+                            <li>BBM Colleges</li>
+                            <li>PGDM Colleges</li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY STATE</h4>
+                        <ul>
+                            <li>Maharashtra</li>
+                            <li>Delhi</li>
+                            <li>Uttar Pradesh</li>
+                            <li>Tamil Nadu</li>
+                            <li>Rajasthan</li>
+                            <li>Andhra Pradesh</li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-column">
+                        <h4>POPULAR COLLEGES</h4>
+                        <ul>
+                            <li>Symbiosis, Pune</li>
+                            <li>IIM Ahmedabad</li>
+                            <li>NMIMS</li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY CITY</h4>
+                        <ul>
+                            <li>Thiruvananthapuram</li>
+                            <li>Kozhikode</li>
+                            <li>Kochi</li>
+                            <li>Thrissur</li>
+                            <li>Kottayam</li>
+                            <li>Alappuzha</li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY SPECIALISATION</h4>
+                        <ul>
+                            <li>MBA Marketing Colleges</li>
+                            <li>MBA Finance Colleges</li>
+                            <li>MBA HR Colleges</li>
+                            <li>MBA Operations Management Colleges</li>
+                            <li>MBA IT Colleges</li>
+                            <li>MBA Banking Colleges</li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-column">
+                        <h4>EXAMS</h4>
+                        <ul>
+                            <li>CAT</li>
+                            <li>XAT</li>
+                            <li>UPESMET</li>
+                            <li>MAT</li>
+                            <li>GMAT</li>
+                            <li>UPTU</li>
+                            <li>KIITEE Management</li>
+                            <li>MAHCET</li>
+                            <li>LPUNEST</li>
+                            <li>All Management Exams >></li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-column">
+                        <h4>COURSES</h4>
+                        <ul>
+                            <li>MBA</li>
+                            <li>BBA</li>
+                            <li>BBM</li>
+                            <li>MBA Marketing</li>
+                            <li>MBA Finance</li>
+                            <li>MBA HR</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-item">Commerce</div>
+            <div class="nav-item">Nursing</div>
+            <div class="nav-link-item">
+                More
+                <div class="mini-menu">
                     <ul>
-                        <li>Comprehensive guidance for courses and colleges in Kerala.</li>
-                        <li>Support for state and national level entrance exams.</li>
-                        <li>Scholarship assistance and financial planning advice.</li>
-                        <li>Career counseling to align education with your aspirations.</li>
+                        <li>About Us</li>
+                        <li>Our Team</li>
+                        <li>Services</li>
+                        <li>Blogs</li>
+                        <li>Boards</li>
+                        <li>Schools</li>
                     </ul>
-                    <p>
-                        Our team stays updated with the latest educational trends in Kerala, ensuring students have
-                        access
-                        to accurate and timely information for a successful academic journey.
-                    </p>
-                    <a href="#" class="btn form-left-btn">Get Consultation</a>
                 </div>
+            </div>
+        </div>
+    </div>
 
-                <div class="col-12 col-lg-6 col-md-6">
-                    <div class="content text-white ">
-                        <form class="contact-form">
-                            <div class="form-group animate-slide">
-                                <input type="text" placeholder="Full Name" required>
-                            </div>
-                            <div class="form-group animate-slide" style="animation-delay: 0.1s;">
-                                <input type="email" placeholder="Email Address" required>
-                            </div>
-                            <div class="form-group animate-slide" style="animation-delay: 0.2s;">
-                                <input type="tel" placeholder="Phone Number" required>
-                            </div>
-                            <div class="form-group animate-slide" style="animation-delay: 0.3s;">
-                                <input type="text" placeholder="Location" required>
-                            </div>
-                            <div class="form-group animate-slide" style="animation-delay: 0.4s;">
-                                <textarea placeholder="Your Message" rows="3"></textarea>
-                            </div>
-                            <button type="submit" class="btn-submit animate-slide" style="animation-delay: 0.5s;">
-                                Send Message
-                            </button>
-                        </form>
-                    </div>
-                </div>
+    <!-- Mobile Hamburger Menu -->
+    <div class="mobile-navbar">
+        <div class="mobile-logo">
+            <img src="https://www.keralastudy.com/images/logo.png" alt="Logo">
+        </div>
+        <div class="hamburger">&#9776;</div>
+    </div>
+
+    <!-- Mobile Menu Links -->
+    <div class="mobile-menu">
+        <div class="mobile-item">Home</div>
+        <div class="mobile-item">Medical</div>
+        <div class="mobile-item">Engineering</div>
+        <div class="mobile-item">Dental Colleges</div>
+        <div class="mobile-item">Management</div>
+        <div class="mobile-item">Commerce</div>
+        <div class="mobile-item">Nursing</div>
+        <div class="mobile-item">More</div>
+    </div>
+
+    <!-- -------------------------------------------------------------HERO SECTION -->
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- SVG Background -->
+        <svg class="svg-bg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+            <path fill="#fff" fill-opacity=".3"
+                d="M0,64L48,101.3C96,139,192,213,288,224C384,235,480,181,576,176C672,171,768,213,864,234.7C960,256,1056,256,1152,229.3C1248,203,1344,149,1392,122.7L1440,96L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z">
+                <animateTransform attributeName="transform" attributeType="XML" type="translate"
+                    values="0,0; -20,10; 0,0" dur="10s" repeatCount="indefinite" />
+            </path>
+        </svg>
+
+        <!-- Hero Content -->
+        <div class="hero-content">
+            <h1>Explore India’s Top Colleges — Admissions, Placements & More</h1>
+            <p>Start your journey with the best institutions. Transparent data, smart tools, expert advice — all in one
+                place.</p>
+
+            <div class="search-box">
+                <input type="text" placeholder="Search for colleges, cities, or courses..." />
+                <button>Apply Now</button>
             </div>
         </div>
     </section>
 
-    <!-- Search Section -->
-    <section class="search-section">
-        <div class="container">
-            <div class="search-container">
-                <h2 class="search-title">Find Your Perfect Education Path</h2>
-                <p class="search-subtitle">Search from thousands of programs and institutions worldwide</p>
-
-                <div class="search-box">
-                    <input type="text" class="search-input"
-                        placeholder="Search for programs, universities, or courses...">
-                    <button class="search-button">
-                        <i class="fas fa-search"></i> Search
-                    </button>
-                </div>
-            </div>
-        </div>
+    <!-- Intro Section -->
+    <section class="intro">
+        <nav><a href="indexsecond.html">Home</a> › <span>Colleges</span></nav>
+        <h2>Best Colleges in India</h2>
+        <p>
+            Selecting the right college is more than just a step towards your future; it's a transformative experience
+            that shapes your entire life. The best colleges in India offer more than academic excellence; they provide a
+            vibrant ecosystem where passion meets purpose, and potential transforms into reality. These institutions are
+            not just places of learning; they are incubators of innovation, creativity, and leadership.
+        </p>
     </section>
 
-    <!-- Features Section -->
-    <section class="features">
-        <div class="container">
-            <h2 class="section-title">Our Comprehensive Services</h2>
-            <p class="section-subtitle">We offer end-to-end educational consulting services tailored to your unique
-                needs</p>
+    <div class="text-center pb-3">
+        <a href="#" class="download-brochure  text-white">Requst for a Call Back</a>
+    </div>
 
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-user-graduate"></i>
-                    </div>
-                    <h3 class="feature-title">University Admissions</h3>
-                    <p class="feature-desc">Comprehensive guidance through the entire application process for top
-                        universities worldwide.</p>
-                    <a href="#" class="feature-link">
-                        Learn more <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
+    <!------------------------------------------------------ COLLEGES FILTERS --------------------------------------------------->
 
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-book-open"></i>
-                    </div>
-                    <h3 class="feature-title">Test Preparation</h3>
-                    <p class="feature-desc">Personalized tutoring for SAT, ACT, GRE, GMAT, and other standardized tests.
-                    </p>
-                    <a href="#" class="feature-link">
-                        Learn more <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-hand-holding-usd"></i>
-                    </div>
-                    <h3 class="feature-title">Scholarship Guidance</h3>
-                    <p class="feature-desc">Expert assistance in finding and applying for scholarships and financial aid
-                        opportunities.</p>
-                    <a href="#" class="feature-link">
-                        Learn more <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-chalkboard-teacher"></i>
-                    </div>
-                    <h3 class="feature-title">Career Counseling</h3>
-                    <p class="feature-desc">Strategic guidance to help students choose the right career path based on
-                        their skills and interests.</p>
-                    <a href="#" class="feature-link">
-                        Learn more <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-passport"></i>
-                    </div>
-                    <h3 class="feature-title">Study Abroad Programs</h3>
-                    <p class="feature-desc">Assistance with selecting and applying to international study programs
-                        around the globe.</p>
-                    <a href="#" class="feature-link">
-                        Learn more <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-school"></i>
-                    </div>
-                    <h3 class="feature-title">Institutional Consulting</h3>
-                    <p class="feature-desc">Helping educational institutions improve their programs, marketing, and
-                        student outcomes.</p>
-                    <a href="#" class="feature-link">
-                        Learn more <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
+    <section class="wrap">
+        <div class="head">
+            <h2>Found 19 Colleges</h2>
+            <span class="count">Updated list</span>
         </div>
-    </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2 class="cta-title">Ready to Transform Your Educational Journey?</h2>
-                <p class="cta-subtitle">Join thousands of students and institutions who have achieved their goals with
-                    our expert guidance.</p>
-
-                <div class="cta-buttons">
-                    <a href="#" class="btn btn-primary">
-                        <i class="fas fa-calendar-check"></i> Schedule Consultation
-                    </a>
-                    <a href="#" class="btn btn-secondary">
-                        <i class="fas fa-download"></i> Download Brochure
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="container py-5 text-center">
-            <span class="badge bg-light text-dark mb-3">Study Destinations</span>
-            <h2 class="fw-bold">Global Education Opportunities</h2>
-            <p class="text-muted mb-5">Explore top study destinations with world-class universities and diverse cultural
-                experiences.</p>
-
-            <!-- Category Buttons -->
-            <div class="category-bar" data-aos="zoom-in-up">
-                <button class="category-btn active" data-city="all">All</button>
-                <button class="category-btn" data-city="hubli">Thiruvananthapuram</button>
-                <button class="category-btn" data-city="bangalore">Kochi</button>
-                <button class="category-btn" data-city="delhi">Kozhikode</button>
-                <button class="category-btn" data-city="mumbai">Thrissur</button>
-                <button class="category-btn" data-city="mumbai">Kollam</button>
+        <!-- Filters -->
+        <aside class="filters" aria-label="Filters">
+            <div class="search">
+                <input type="search" placeholder="Search states" aria-label="Search states" />
+                <svg class="i" viewBox="0 0 24 24" fill="none">
+                    <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" />
+                    <path d="M20 20L17 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
             </div>
 
-            <!-- Cards Grid -->
-            <div class="row g-4" id="collegeGrid">
-                <!-- Hubli -->
-                <div class="col-md-4 college-card" data-aos="fade-zoom-in" data-aos-easing="ease-in-back"
-                    data-aos-delay="100" data-aos-offset="0" data-city="hubli">
-                    <a href="#"
-                        style="background-image: url('https://s7ap1.scene7.com/is/image/incredibleindia/kovalam-beach-thiruvananthapuram-kerala-2-attr-hero?qlt=82&ts=1742152368699');">
-                        <div class="card-text">
-                            <h5>Indian Institute of Space Science & Technology (IIST)</h5>
-                            <p>50+ Courses</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 college-card" data-aos="fade-zoom-in" data-aos-easing="ease-in-back"
-                    data-aos-delay="200" data-aos-offset="0" data-city="hubli">
-                    <a href="#"
-                        style="background-image: url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/de/f0/eb/backwater-tourism.jpg?w=700&h=-1&s=1');">
-                        <div class="card-text">
-                            <h5>Cochin University of Science and Technology (CUSAT)</h5>
-                            <p>30+ Courses</p>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Bangalore -->
-                <div class="col-md-4 college-card" data-aos="fade-zoom-in" data-aos-easing="ease-in-back"
-                    data-aos-delay="300" data-aos-offset="0" data-city="bangalore">
-                    <a href="#"
-                        style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
-                        <div class="card-text">
-                            <h5>National Institute of Technology (NIT), Calicut</h5>
-                            <p>100+ Courses</p>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Delhi -->
-                <div class="col-md-4 college-card" data-aos="fade-zoom-in" data-aos-easing="ease-in-back"
-                    data-aos-delay="400" data-aos-offset="0" data-city="delhi">
-                    <a href="#"
-                        style="background-image: url('https://niyaregency.com/blogs/wp-content/uploads/2024/03/maxresdefault.jpg');">
-                        <div class="card-text">
-                            <h5>Government Victoria College, Thrissur</h5>
-                            <p>200+ Courses</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 college-card" data-aos="fade-zoom-in" data-aos-easing="ease-in-back"
-                    data-aos-delay="600" data-aos-offset="0" data-city="mumbai">
-                    <a href="#"
-                        style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJpXAia7Kn3hxJMyWOXV68Cc2_JSzodiCe7A&s');">
-                        <div class="card-text">
-                            <h5>St. Joseph’s College for Women</h5>
-                            <p>120+ Courses</p>
-                        </div>
-                    </a>
-                </div>
-                <!-- Mumbai -->
-                <div class="col-md-4 college-card" data-aos="fade-zoom-in" data-aos-easing="ease-in-back"
-                    data-aos-delay="700" data-aos-offset="0" data-city="mumbai">
-                    <a href="#"
-                        style="background-image: url('https://vardhmanvacations.com/blog/wp-content/uploads/2024/09/jatayu-earth-center-kollam-1024x646.jpg');">
-                        <div class="card-text">
-                            <h5>Government Engineering College, Sreekrishnapuram</h5>
-                            <p>120+ Courses</p>
-                        </div>
-                    </a>
+            <div class="group">
+                <h3>States</h3>
+                <div class="stack">
+                    <label class="check"><input type="checkbox"> Andhra Pradesh</label>
+                    <label class="check"><input type="checkbox"> Gujarat</label>
+                    <label class="check"><input type="checkbox"> Karnataka</label>
+                    <label class="check"><input type="checkbox"> Kerala</label>
+                    <label class="check"><input type="checkbox"> Tamil Nadu</label>
+                    <label class="check"><input type="checkbox"> Telangana</label>
                 </div>
             </div>
 
-            <button class="btn btn-primary mt-5 px-4 py-2">Learn More</button>
-        </div>
-    </section>
+            <div class="divider"></div>
 
-    <section>
-        <div class="container-fluid text-center p-5">
-            <span class="badge bg-light text-dark mb-3">---------</span>
-            <h2 class="fw-bold">COLLEGES LIST</h2>
-            <p class="text-muted mb-5">Explore top study destinations with world-class universities and diverse cultural
-                experiences.</p>
-            <div class="row gy-5 gx-5">
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="clgcard" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
-                        <div class="top-clgcard">
-                            <img src="https://i.ndtvimg.com/i/2017-02/cochin-university_650x400_71486636322.jpg"
-                                alt="College">
-                        </div>
-                        <div class="bottom-clgcard">
-                            <div class="clgcard-content">
-                                <span class="clgcard-title">Harvard University</span>
-                                <p class="clgcard-txt">Innovation hub for technology & science.</p>
-                                <a href="#" class="clgcard-btn">APPLY</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="clgcard" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
-                        <div class="top-clgcard">
-                            <img src="https://blog.careerguide.com/wp-content/uploads/2023/01/ajaz-87-1024x576-1.jpg"
-                                alt="College">
-                        </div>
-                        <div class="bottom-clgcard">
-                            <div class="clgcard-content">
-                                <span class="clgcard-title">Stanford University</span>
-                                <p class="clgcard-txt">Innovation hub for technology & science.</p>
-                                <a href="#" class="clgcard-btn">APPLY</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="clgcard" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
-                        <div class="top-clgcard">
-                            <img src="https://images.indianexpress.com/2025/07/keam-kerala.jpg" alt="College">
-                        </div>
-                        <div class="bottom-clgcard">
-                            <div class="clgcard-content">
-                                <span class="clgcard-title">Stanford University</span>
-                                <p class="clgcard-txt">Innovation hub for technology & science.</p>
-                                <a href="#" class="clgcard-btn">APPLY</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="clgcard" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
-                        <div class="top-clgcard">
-                            <img src="https://www.collegechalo.com/news-panel/wp-content/uploads/2024/10/Commerce-Colleges-in-Kerala.jpg"
-                                alt="College">
-                        </div>
-                        <div class="bottom-clgcard">
-                            <div class="clgcard-content">
-                                <span class="clgcard-title">Stanford University</span>
-                                <p class="clgcard-txt">Innovation hub for technology & science.</p>
-                                <a href="#" class="clgcard-btn">APPLY</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="clgcard" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
-                        <div class="top-clgcard">
-                            <img src="https://i.ndtvimg.com/i/2017-02/cochin-university_650x400_71486636322.jpg"
-                                alt="College">
-                        </div>
-                        <div class="bottom-clgcard">
-                            <div class="clgcard-content">
-                                <span class="clgcard-title">Harvard University</span>
-                                <p class="clgcard-txt">Innovation hub for technology & science.</p>
-                                <a href="#" class="clgcard-btn">APPLY</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="clgcard" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
-                        <div class="top-clgcard">
-                            <img src="https://blog.careerguide.com/wp-content/uploads/2023/01/ajaz-87-1024x576-1.jpg"
-                                alt="College">
-                        </div>
-                        <div class="bottom-clgcard">
-                            <div class="clgcard-content">
-                                <span class="clgcard-title">Stanford University</span>
-                                <p class="clgcard-txt">Innovation hub for technology & science.</p>
-                                <a href="#" class="clgcard-btn">APPLY</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="clgcard" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
-                        <div class="top-clgcard">
-                            <img src="https://images.indianexpress.com/2025/07/keam-kerala.jpg" alt="College">
-                        </div>
-                        <div class="bottom-clgcard">
-                            <div class="clgcard-content">
-                                <span class="clgcard-title">Stanford University</span>
-                                <p class="clgcard-txt">Innovation hub for technology & science.</p>
-                                <a href="#" class="clgcard-btn">APPLY</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="clgcard" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
-                        <div class="top-clgcard">
-                            <img src="https://www.collegechalo.com/news-panel/wp-content/uploads/2024/10/Commerce-Colleges-in-Kerala.jpg"
-                                alt="College">
-                        </div>
-                        <div class="bottom-clgcard">
-                            <div class="clgcard-content">
-                                <span class="clgcard-title">Stanford University</span>
-                                <p class="clgcard-txt">Innovation hub for technology & science.</p>
-                                <a href="#" class="clgcard-btn">APPLY</a>
-                            </div>
-                        </div>
-                    </div>
+            <div class="group">
+                <h3>Cities</h3>
+                <div class="stack">
+                    <label class="check"><input type="checkbox"> Bangalore</label>
+                    <label class="check"><input type="checkbox"> Kochi</label>
+                    <label class="check"><input type="checkbox"> Chennai</label>
+                    <label class="check"><input type="checkbox"> Hyderabad</label>
                 </div>
             </div>
-        </div>
-    </section>
+        </aside>
 
-
-    <!-- FAQ Section -->
-    <section class="faq-hero">
-        <div class="container-xl faq-grid">
-            <!-- Left intro -->
-            <div class="faq-intro">
-                <span class="badge-soft">FAQ</span>
-                <h2 class="display-5 fw-700">What would you like to know about Study?</h2>
-                <button class="btn-pill" type="button">
-                    <span class="icon">💬</span> Talk to us
-                </button>
-                <!-- Decorative blob -->
-                <div class="blob-wrap">
-                    <div class="blob-oval"></div>
-                    <div class="blob-dot"></div>
+        <!-- Results -->
+        <div class="results">
+            <!-- Card 1 -->
+            <article class="card" tabindex="0">
+                <div class="thumb">
+                    <img src="https://api.learntechww.com/college_banner_image/logo1747822119895.webp"
+                        alt="Campus building exterior">
                 </div>
-            </div>
-
-            <!-- Right FAQ list -->
-            <div class="faq-list" id="faqList">
-                <!-- item -->
-                <div class="faq-item">
-                    <button class="faq-q" aria-expanded="false">
-                        <span>What services do you offer for students seeking admission abroad?</span>
-                        <svg class="chev" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" />
+                <div class="meta">
+                    <div class="title">
+                        <h3>Vidya Bharath College of Pharmacy, Bangalore</h3>
+                        <span class="pill">Private</span>
+                    </div>
+                    <div class="sub">
+                        <span class="row"><svg class="i" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2l7 7-7 13L5 9l7-7z" stroke="currentColor" stroke-width="1.5" />
+                            </svg> Sy No. 38, Thirumenahalli, Yelahanka</span>
+                        <span class="dot"></span>
+                        <span class="row"><svg class="i" viewBox="0 0 24 24" fill="none">
+                                <path d="M6 7h12M6 12h12M6 17h8" stroke="currentColor" stroke-width="1.5" />
+                            </svg> Est. Year 2004</span>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">Pharmacy</span>
+                        <span class="tag">B.Pharm</span>
+                        <span class="tag">PCI</span>
+                    </div>
+                </div>
+                <div class="cta">
+                    <div class="stars" aria-label="Rating 4.5">
+                        <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 17.3l-6.18 3.64L7.64 14 2 9.27l6.91-.59L12 2l3.09 6.68 6.91.59L16.36 14l1.82 6.94z" />
                         </svg>
-                    </button>
-                    <div class="faq-a" hidden>
-                        <p>Kota focuses on transparent pricing, modern tooling, and hands-on support so teams get clear
-                            value without lock‑in.</p>
-                    </div>
-                </div>
-                <!-- item -->
-                <div class="faq-item">
-                    <button class="faq-q" aria-expanded="false">
-                        <span>How do I choose the right university or course for my goals?</span>
-                        <svg class="chev" width="20" height="20" viewBox="0 0 24 24">
-                            <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" />
+                        <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 17.3l-6.18 3.64L7.64 14 2 9.27l6.91-.59L12 2l3.09 6.68 6.91.59L16.36 14l1.82 6.94z" />
                         </svg>
-                    </button>
-                    <div class="faq-a" hidden>
-                        <p>Simple tiered plans with optional add‑ons, billed monthly with annual discounts.</p>
-                    </div>
-                </div>
-                <!-- item -->
-                <div class="faq-item">
-                    <button class="faq-q" aria-expanded="false">
-                        <span>Do you assist with visa applications and documentation?</span>
-                        <svg class="chev" width="20" height="20" viewBox="0 0 24 24">
-                            <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" />
+                        <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 17.3l-6.18 3.64L7.64 14 2 9.27l6.91-.59L12 2l3.09 6.68 6.91.59L16.36 14l1.82 6.94z" />
                         </svg>
-                    </button>
-                    <div class="faq-a" hidden>
-                        <p>Kota integrates alongside the current scheme and migrates data with no downtime.</p>
-                    </div>
-                </div>
-                <!-- item -->
-                <div class="faq-item">
-                    <button class="faq-q" aria-expanded="false">
-                        <span>What are the costs and fees for your consulting services?</span>
-                        <svg class="chev" width="20" height="20" viewBox="0 0 24 24">
-                            <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" />
+                        <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 17.3l-6.18 3.64L7.64 14 2 9.27l6.91-.59L12 2l3.09 6.68 6.91.59L16.36 14l1.82 6.94z" />
                         </svg>
-                    </button>
-                    <div class="faq-a" hidden>
-                        <p>No, Kota’s team provides guidance directly and collaborates with existing partners if needed.
-                        </p>
-                    </div>
-                </div>
-                <!-- item -->
-                <div class="faq-item">
-                    <button class="faq-q" aria-expanded="false">
-                        <span>How long does the entire admission process usually take?</span>
-                        <svg class="chev" width="20" height="20" viewBox="0 0 24 24">
-                            <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" />
+                        <svg class="star" viewBox="0 0 24 24" fill="currentColor" style="opacity:.4">
+                            <path
+                                d="M12 17.3l-6.18 3.64L7.64 14 2 9.27l6.91-.59L12 2l3.09 6.68 6.91.59L16.36 14l1.82 6.94z" />
                         </svg>
-                    </button>
-                    <div class="faq-a" hidden>
-                        <p>Monthly terms by default; cancel anytime, with optional annual savings.</p>
+                    </div>
+                    <a class="btn" href="#">Apply Now</a>
+                    <a class="link" href="#">View More</a>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="card" tabindex="0">
+                <div class="thumb">
+                    <img src="https://api.learntechww.com/college_banner_image/logo1747817850961.webp"
+                        alt="Institute building front">
+                </div>
+                <div class="meta">
+                    <div class="title">
+                        <h3>St. Joseph’s Institute of Management (SJIM), Bangalore</h3>
+                        <span class="pill">Private</span>
+                    </div>
+                    <div class="sub">
+                        <span class="row"><svg class="i" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2l7 7-7 13L5 9l7-7z" stroke="currentColor" stroke-width="1.5" />
+                            </svg> 28/1, Primrose Rd, Craig Park Layout</span>
+                        <span class="dot"></span>
+                        <span class="row"><svg class="i" viewBox="0 0 24 24" fill="none">
+                                <path d="M6 7h12M6 12h12M6 17h8" stroke="currentColor" stroke-width="1.5" />
+                            </svg> Est. Year 1968</span>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">MBA</span>
+                        <span class="tag">AICTE</span>
+                        <span class="tag">PGDM</span>
                     </div>
                 </div>
-                <!-- item -->
-                <div class="faq-item">
-                    <button class="faq-q" aria-expanded="false">
-                        <span>Can you help with scholarships and financial aid opportunities?</span>
-                        <svg class="chev" width="20" height="20" viewBox="0 0 24 24">
-                            <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" />
+                <div class="cta">
+                    <div class="stars" aria-label="Rating 4.8">
+                        <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 17.3l-6.18 3.64L7.64 14 2 9.27l6.91-.59L12 2l3.09 6.68 6.91.59L16.36 14l1.82 6.94z" />
                         </svg>
-                    </button>
-                    <div class="faq-a" hidden>
-                        <p>Encryption in transit and at rest, strict access controls, and regular audits.</p>
+                        <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 17.3l-6.18 3.64L7.64 14 2 9.27l6.91-.59L12 2l3.09 6.68 6.91.59L16.36 14l1.82 6.94z" />
+                        </svg>
+                        <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 17.3l-6.18 3.64L7.64 14 2 9.27l6.91-.59L12 2l3.09 6.68 6.91.59L16.36 14l1.82 6.94z" />
+                        </svg>
+                        <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 17.3l-6.18 3.64L7.64 14 2 9.27l6.91-.59L12 2l3.09 6.68 6.91.59L16.36 14l1.82 6.94z" />
+                        </svg>
+                        <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 17.3l-6.18 3.64L7.64 14 2 9.27l6.91-.59L12 2l3.09 6.68 6.91.59L16.36 14l1.82 6.94z" />
+                        </svg>
+                    </div>
+                    <a class="btn" href="#">Apply Now</a>
+                    <a class="link" href="#">View More</a>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="card" tabindex="0">
+                <div class="thumb">
+                    <img src="https://api.learntechww.com/college_banner_image/logo1757328260477.webp"
+                        alt="Medical college white building">
+                </div>
+                <div class="meta">
+                    <div class="title">
+                        <h3>Cauvery Ayurvedic Medical College and Hospital</h3>
+                        <span class="pill">Private</span>
+                    </div>
+                    <div class="sub">
+                        <span class="row"><svg class="i" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2l7 7-7 13L5 9l7-7z" stroke="currentColor" stroke-width="1.5" />
+                            </svg> #131/1, KBL Layout, Devegowda</span>
+                        <span class="dot"></span>
+                        <span class="row"><svg class="i" viewBox="0 0 24 24" fill="none">
+                                <path d="M6 7h12M6 12h12M6 17h8" stroke="currentColor" stroke-width="1.5" />
+                            </svg> Est. Year 2023</span>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">BAMS</span>
+                        <span class="tag">Ayurveda</span>
+                        <span class="tag">Hospital</span>
                     </div>
                 </div>
-            </div>
+                <div class="cta">
+                    <div class="stars" aria-label="Rating 4.2">
+                        <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 17.3l-6.18 3.64L7.64 14 2 9.27l6.91-.59L12 2l3.09 6.68 6.91.59L16.36 14l1.82 6.94z" />
+                        </svg>
+                        <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 17.3l-6.18 3.64L7.64 14 2 9.27l6.91-.59L12 2l3.09 6.68 6.91.59L16.36 14l1.82 6.94z" />
+                        </svg>
+                        <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 17.3l-6.18 3.64L7.64 14 2 9.27l6.91-.59L12 2l3.09 6.68 6.91.59L16.36 14l1.82 6.94z" />
+                        </svg>
+                        <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 17.3l-6.18 3.64L7.64 14 2 9.27l6.91-.59L12 2l3.09 6.68 6.91.59L16.36 14l1.82 6.94z" />
+                        </svg>
+                        <svg class="star" viewBox="0 0 24 24" fill="currentColor" style="opacity:.35">
+                            <path
+                                d="M12 17.3l-6.18 3.64L7.64 14 2 9.27l6.91-.59L12 2l3.09 6.68 6.91.59L16.36 14l1.82 6.94z" />
+                        </svg>
+                    </div>
+                    <a class="btn" href="#">Apply Now</a>
+                    <a class="link" href="#">View More</a>
+                </div>
+            </article>
+            <button class="btn readmore">Read More</button>
         </div>
     </section>
 
 
+    <!-- -------------------------------------------------------------FOOTER SECTION HERE -->
 
-
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="#" class="footer-logo">
-                        <img src="https://www.keralastudy.com/images/logo.png" class="logo" alt="logo">
-                    </a>
-                    <p class="footer-desc">Helping students and educational institutions achieve excellence through
-                        innovative consulting solutions.</p>
+            <div class="row">
+                <!-- Logo & Info -->
+                <div class="col-lg-4 col-md-6 mb-4 left-text">
+                    <div class="footer-logo mb-3">
+                        <img src="https://www.keralastudy.com/images/logo.png" class="img-fluid" alt="">
+                    </div>
+                    <p>Dream. Apply. Achieve.<br>
+                        Our Expert Admission Guidance is the Bridge that Connects You to a Brighter Future.</p>
+                    <p><i class="fa fa-phone me-2"></i>1800 120 8696</p>
+                    <p><i class="fa fa-envelope me-2"></i>info@learntechww.com</p>
+                    <p><i class="fa fa-map-marker-alt me-2"></i>#80 (4), 'D' Main Rd, East End, 9th Block,<br>Jayanagar,
+                        Bangalore, Karnataka - 560041</p>
                 </div>
 
-                <div class="footer-links">
-                    <h3 class="footer-heading">Quick Links</h3>
-                    <ul class="footer-links">
-                        <li class="footer-link"><a href="#">Home</a></li>
-                        <li class="footer-link"><a href="#">Services</a></li>
-                        <li class="footer-link"><a href="#">About Us</a></li>
-                        <li class="footer-link"><a href="#">Success Stories</a></li>
-                        <li class="footer-link"><a href="#">Contact</a></li>
+                <!-- Info -->
+                <div class="col-lg-2 col-md-6 mb-4 pt-5">
+                    <h6 class="footer-title">Info</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> About us</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Our Team</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Contact us</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Careers</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Site Map</a></li>
                     </ul>
                 </div>
 
-                <div class="footer-links">
-                    <h3 class="footer-heading">Services</h3>
-                    <ul class="footer-links">
-                        <li class="footer-link"><a href="#">University Admissions</a></li>
-                        <li class="footer-link"><a href="#">Test Preparation</a></li>
-                        <li class="footer-link"><a href="#">Scholarship Guidance</a></li>
-                        <li class="footer-link"><a href="#">Career Counseling</a></li>
-                        <li class="footer-link"><a href="#">Institutional Consulting</a></li>
+                <!-- Quick Links -->
+                <div class="col-lg-2 col-md-6 mb-4  pt-5">
+                    <h6 class="footer-title">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Blogs</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> NRI Quota</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Study Abroad</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Scholarships</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Student's Speak</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Education Loan</a></li>
                     </ul>
                 </div>
 
-                <div class="footer-links">
-                    <h3 class="footer-heading">Contact Us</h3>
-                    <ul class="footer-links">
-                        <li class="footer-link"><a href="#"><i class="fas fa-map-marker-alt"></i> 123 Education Ave,
-                                Boston, MA</a></li>
-                        <li class="footer-link"><a href="#"><i class="fas fa-phone"></i> (555) 123-4567</a></li>
-                        <li class="footer-link"><a href="#"><i class="fas fa-envelope"></i> info@nexlearn.com</a></li>
+                <!-- Legal -->
+                <div class="col-lg-2 col-md-6 mb-4 pt-5">
+                    <h6 class="footer-title">Legal</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Feed</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Disclaimer</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Privacy Policy</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Terms & Conditions</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Advertise With Us</a></li>
                     </ul>
+                </div>
+
+                <!-- Download App -->
+                <div class="col-lg-2 col-md-6 mb-4  pt-5">
+                    <h6 class="footer-title">Download Our App</h6>
+                    <div class="download-btn">
+                        <a href="#"><img
+                                src="https://www.learntechww.com/_next/image?url=%2Fimages%2Ficons%2Fapp-store.webp&w=384&q=75"
+                                alt="App Store"></a><br>
+                        <a href="#"><img
+                                src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                                alt="Google Play"></a>
+                    </div>
                 </div>
             </div>
 
-            <div class="copyright">
-                <p>&copy; 2023 NexLearn Educational Consulting. All rights reserved.</p>
+            <!-- Download Brochure -->
+            <div class="text-center">
+                <a href="#" class="download-brochure">📄 Download Brochure</a>
             </div>
+
+            <!-- Copyright -->
+            <div class="footer-bottom mt-4 d-flex justify-content-between align-items-center left-text">
+                <p class="mb-0">©2025 Learntech Edu Solutions Pvt. Ltd. All Rights Reserved.</p>
+
+                <div class="d-flex align-items-center ">
+                    <p class="mb-0 me-2">Follow us on</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/MotionPathPlugin.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/locomotive-scroll/4.2.2/locomotive-scroll.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <!-- Initialize libraries -->
     <script>
+        // AOS
         AOS.init();
+
+        // Example: GSAP intro animation
+        gsap.from("body", { opacity: 0, duration: 1 });
+
+        // Example: Slick init
+        $(".your-carousel").slick({
+            slidesToShow: 3,
+            autoplay: true,
+            arrows: false
+        });
+
+        // Example: IntlTelInput init
+        const phoneInput = document.querySelector("#phone");
+        if (phoneInput) {
+            window.intlTelInput(phoneInput, {
+                initialCountry: "in",
+                utilsScript:
+                    "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js",
+            });
+        }
     </script>
     <script>
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('.mobile-menu');
 
-        // Cache
-        const nav = document.querySelector('.navbar');
-        const toggle = document.getElementById('megaToggle');
-        const menu = document.getElementById('megaMenu');
-        const closeBtn = menu.querySelector('[data-close="mega"]');
-
-        // Track navbar height for full-screen inset
-        function setNavHeightVar() {
-            const h = nav.getBoundingClientRect().height;
-            document.documentElement.style.setProperty('--nav-height', h + 'px');
-        }
-        setNavHeightVar();
-        window.addEventListener('resize', setNavHeightVar);
-
-        // GSAP timeline
-        const tl = gsap.timeline({ paused: true, defaults: { duration: .35, ease: 'power2.out' } });
-        tl.fromTo(menu, { autoAlpha: 0, y: 10 }, {
-            autoAlpha: 1, y: 0, onStart() {
-                menu.style.visibility = 'visible';
-                menu.style.pointerEvents = 'auto';
-            }
-        })
-            .from('.mega-panel', { y: 10, opacity: 0 }, 0)
-            .from('.mega-h', { y: 8, opacity: 0, stagger: .03 }, .05)
-            .from('.mega-link', { y: 6, opacity: 0, stagger: .015 }, .08);
-
-        let open = false;
-
-        function ensureFullscreenIfOverflow() {
-            // If panel bottom would go beyond viewport, switch to fixed full-screen
-            const panel = menu.querySelector('.mega-panel');
-            const rect = panel.getBoundingClientRect();
-            const needsFull = (window.innerHeight - rect.top) < (rect.height + 24);
-            menu.classList.toggle('mega-full', needsFull);
-        }
-
-        function openMenu() {
-            if (open) return;
-            ensureFullscreenIfOverflow();
-            menu.setAttribute('data-open', 'true');
-            toggle.setAttribute('aria-expanded', 'true');
-            tl.play(0);
-            open = true;
-            trapFocus();
-            document.addEventListener('keydown', onKey);
-            document.addEventListener('click', onDocClick);
-        }
-
-        function closeMenu() {
-            if (!open) return;
-            gsap.to(menu, {
-                autoAlpha: 0, y: 10, duration: .25, onComplete() {
-                    menu.style.visibility = 'hidden';
-                    menu.style.pointerEvents = 'none';
-                    menu.classList.remove('mega-full');
-                }
-            });
-            toggle.setAttribute('aria-expanded', 'false');
-            open = false;
-            releaseFocus();
-            document.removeEventListener('keydown', onKey);
-            document.removeEventListener('click', onDocClick);
-        }
-
-        function onKey(e) {
-            if (e.key === 'Escape') closeMenu();
-        }
-        function onDocClick(e) {
-            if (!menu.contains(e.target) && !toggle.contains(e.target)) closeMenu();
-        }
-
-        // Hover open for desktop, click for mobile
-        const hoverMQ = window.matchMedia('(hover: hover) and (pointer: fine)');
-        if (hoverMQ.matches) {
-            let hoverTimer;
-            toggle.addEventListener('mouseenter', () => { hoverTimer = setTimeout(openMenu, 80); });
-            toggle.addEventListener('mouseleave', () => { clearTimeout(hoverTimer); });
-            menu.addEventListener('mouseleave', closeMenu);
-            menu.addEventListener('mouseenter', () => { /* keep open */ });
-        }
-        // Click toggling
-        toggle.addEventListener('click', (e) => {
-            e.preventDefault();
-            open ? closeMenu() : openMenu();
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('show');
         });
-        closeBtn.addEventListener('click', closeMenu);
-        window.addEventListener('resize', () => { if (open) { ensureFullscreenIfOverflow(); } });
 
-        // Focus trap for accessibility
-        let focusables = [];
-        let firstF, lastF;
-        function trapFocus() {
-            focusables = menu.querySelectorAll('a,button,[tabindex]:not([tabindex="-1"])');
-            firstF = focusables[0]; lastF = focusables[focusables.length - 1];
-            (firstF || closeBtn || toggle).focus();
-            menu.addEventListener('keydown', cycleFocus);
-        }
-        function releaseFocus() {
-            menu.removeEventListener('keydown', cycleFocus);
-            toggle.focus();
-        }
-        function cycleFocus(e) {
-            if (e.key !== 'Tab') return;
-            if (e.shiftKey && document.activeElement === firstF) { e.preventDefault(); lastF.focus(); }
-            else if (!e.shiftKey && document.activeElement === lastF) { e.preventDefault(); firstF.focus(); }
-        }
+    </script>
+
+    <script>
+        const input = document.querySelector("#phone");
+        window.intlTelInput(input, {
+            initialCountry: "in", // Default India
+            preferredCountries: ["in", "us", "gb", "ae"],
+            separateDialCode: true,
+        });
+    </script>
+    <script>
+        // Star hover animation using GSAP
+        const cta = document.querySelector('.cta');
+        const stars = document.querySelectorAll('.cta .star');
+
+        cta.addEventListener('mouseenter', () => {
+            gsap.to(stars, {
+                scale: 1.3,
+                rotate: 15,
+                duration: 0.3,
+                yoyo: true,
+                repeat: 1,
+                ease: "power1.inOut",
+                stagger: 0.05,
+                filter: "drop-shadow(0 0 6px #ffcb05)"
+            });
+        });
+
+        cta.addEventListener('mouseleave', () => {
+            gsap.to(stars, {
+                scale: 1,
+                rotate: 0,
+                duration: 0.3,
+                ease: "power1.out",
+                filter: "drop-shadow(0 0 0px transparent)"
+            });
+        });
+
     </script>
 </body>
+
 
 </html>
